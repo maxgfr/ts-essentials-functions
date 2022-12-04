@@ -1,28 +1,26 @@
 {
-  "name": "typescript-boilerplate-package",
-  "version": "1.0.3",
+  "name": "ts-essentials-functions",
+  "version": "1.0.0",
   "author": "maxgfr",
   "license": "MIT",
-  "description": "A typescript boilerplate using swc to release a package on npm",
+  "description": "A set of essentials functions",
   "main": "./build/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maxgfr/typescript-boilerplate-package.git"
+    "url": "https://github.com/maxgfr/ts-essentials-functions.git"
   },
   "bugs": {
-    "url": "https://github.com/maxgfr/typescript-boilerplate-package/issues"
+    "url": "https://github.com/maxgfr/ts-essentials-functions/issues"
   },
-  "homepage": "https://github.com/maxgfr/typescript-boilerplate-package#readme",
+  "homepage": "https://github.com/maxgfr/ts-essentials-functions#readme",
   "files": [
     "build"
   ],
   "keywords": [
-    "boilerplate",
+    "ts",
     "typescript",
-    "swc",
-    "package",
-    "release",
-    "github"
+    "essentials",
+    "functions"
   ],
   "scripts": {
     "start": "node build/index.js",
