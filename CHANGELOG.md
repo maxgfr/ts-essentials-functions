@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/maxgfr/ts-essentials-functions/compare/v1.0.0...v1.0.1) (2022-12-04)
+
+
+### Bug Fixes
+
+* comment ([c84967c](https://github.com/maxgfr/ts-essentials-functions/commit/c84967c12743b30d575d12327c59ae9dae73966e))
+
 # 1.0.0 (2022-12-04)
 
 
