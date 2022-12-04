@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "maxgfr",
   "license": "MIT",
-  "description": "A set of essentials functions",
+  "description": "A set of essentials functions with zero-dependencies",
   "main": "./build/index.js",
   "repository": {
     "type": "git",
@@ -20,7 +20,8 @@
     "ts",
     "typescript",
     "essentials",
-    "functions"
+    "functions",
+    "zero-dependencies"
   ],
   "scripts": {
     "start": "node build/index.js",
