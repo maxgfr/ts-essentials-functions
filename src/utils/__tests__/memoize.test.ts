@@ -64,7 +64,9 @@ describe('memoize', () => {
     });
 
     it('should distinguish between different argument shapes', () => {
-      const fn = jest.fn((obj: { x: number; y?: number }) => obj.x + (obj.y ?? 0));
+      const fn = jest.fn(
+        (obj: { x: number; y?: number }) => obj.x + (obj.y ?? 0),
+      );
       const memoized = memoize(fn);
 
       expect(memoized({ x: 1 })).toBe(1);

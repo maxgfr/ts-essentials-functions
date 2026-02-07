@@ -24,7 +24,10 @@ describe('timeZoneTransformer', () => {
 
     it('should use Europe/Paris as the default timezone', () => {
       const result1 = timeZoneTransformer('2025-06-15T12:00:00');
-      const result2 = timeZoneTransformer('2025-06-15T12:00:00', 'Europe/Paris');
+      const result2 = timeZoneTransformer(
+        '2025-06-15T12:00:00',
+        'Europe/Paris',
+      );
 
       expect(result1.toUtc.getTime()).toBe(result2.toUtc.getTime());
     });

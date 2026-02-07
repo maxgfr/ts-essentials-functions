@@ -17,9 +17,7 @@
  * - Skips null and undefined values
  * - Encodes keys and values with encodeURIComponent
  */
-export function buildQueryString(
-  params: Record<string, unknown>,
-): string {
+export function buildQueryString(params: Record<string, unknown>): string {
   const parts: string[] = [];
 
   for (const [key, value] of Object.entries(params)) {

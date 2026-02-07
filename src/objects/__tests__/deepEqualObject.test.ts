@@ -26,10 +26,7 @@ describe('deepEqualObject', () => {
 
     it('should return false for objects with different number of keys', () => {
       expect(
-        deepEqualObject(
-          { a: 1, b: 2 },
-          { a: 1 } as Record<string, unknown>,
-        ),
+        deepEqualObject({ a: 1, b: 2 }, { a: 1 } as Record<string, unknown>),
       ).toBe(false);
     });
   });
@@ -76,19 +73,13 @@ describe('deepEqualObject', () => {
 
     it('should return false when a is falsy (null/undefined)', () => {
       expect(
-        deepEqualObject(
-          null as unknown as Record<string, unknown>,
-          { a: 1 },
-        ),
+        deepEqualObject(null as unknown as Record<string, unknown>, { a: 1 }),
       ).toBe(false);
     });
 
     it('should return false when b is falsy (null/undefined)', () => {
       expect(
-        deepEqualObject(
-          { a: 1 },
-          null as unknown as Record<string, unknown>,
-        ),
+        deepEqualObject({ a: 1 }, null as unknown as Record<string, unknown>),
       ).toBe(false);
     });
 
@@ -112,9 +103,7 @@ describe('deepEqualObject', () => {
     });
 
     it('should handle undefined values', () => {
-      expect(
-        deepEqualObject({ a: undefined }, { a: undefined }),
-      ).toBe(true);
+      expect(deepEqualObject({ a: undefined }, { a: undefined })).toBe(true);
     });
 
     it('should handle boolean values', () => {

@@ -25,27 +25,21 @@ describe('detectNullOrUndefinedOrNaNInArray', () => {
 
   describe('nested objects', () => {
     it('should detect undefined in nested objects', () => {
-      expect(
-        detectNullOrUndefinedOrNaNInArray([{ a: undefined }]),
-      ).toBe(true);
+      expect(detectNullOrUndefinedOrNaNInArray([{ a: undefined }])).toBe(true);
     });
 
     it('should detect null in nested objects', () => {
-      expect(
-        detectNullOrUndefinedOrNaNInArray([{ a: null }]),
-      ).toBe(true);
+      expect(detectNullOrUndefinedOrNaNInArray([{ a: null }])).toBe(true);
     });
 
     it('should detect NaN in nested objects', () => {
-      expect(
-        detectNullOrUndefinedOrNaNInArray([{ a: NaN }]),
-      ).toBe(true);
+      expect(detectNullOrUndefinedOrNaNInArray([{ a: NaN }])).toBe(true);
     });
 
     it('should return false for clean nested objects', () => {
-      expect(
-        detectNullOrUndefinedOrNaNInArray([{ a: 1, b: 'hello' }]),
-      ).toBe(false);
+      expect(detectNullOrUndefinedOrNaNInArray([{ a: 1, b: 'hello' }])).toBe(
+        false,
+      );
     });
 
     it('should detect null in deeply nested objects', () => {
@@ -57,15 +51,15 @@ describe('detectNullOrUndefinedOrNaNInArray', () => {
 
   describe('nested arrays', () => {
     it('should detect null in nested arrays within objects', () => {
-      expect(
-        detectNullOrUndefinedOrNaNInArray([{ items: [1, null, 3] }]),
-      ).toBe(true);
+      expect(detectNullOrUndefinedOrNaNInArray([{ items: [1, null, 3] }])).toBe(
+        true,
+      );
     });
 
     it('should return false for clean nested arrays within objects', () => {
-      expect(
-        detectNullOrUndefinedOrNaNInArray([{ items: [1, 2, 3] }]),
-      ).toBe(false);
+      expect(detectNullOrUndefinedOrNaNInArray([{ items: [1, 2, 3] }])).toBe(
+        false,
+      );
     });
   });
 

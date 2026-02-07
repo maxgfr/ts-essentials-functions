@@ -11,9 +11,10 @@ describe('diffObject', () => {
     });
 
     it('should detect multiple changes', () => {
-      expect(
-        diffObject({ a: 1, b: 2, c: 3 }, { a: 10, b: 2, c: 30 }),
-      ).toEqual({ a: 1, c: 3 });
+      expect(diffObject({ a: 1, b: 2, c: 3 }, { a: 10, b: 2, c: 30 })).toEqual({
+        a: 1,
+        c: 3,
+      });
     });
 
     it('should detect all keys as different for completely different objects', () => {

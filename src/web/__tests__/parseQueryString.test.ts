@@ -65,17 +65,13 @@ describe('parseQueryString', () => {
     });
 
     it('should strip hash fragment from query string', () => {
-      const result = parseQueryString(
-        'https://example.com?name=Alice#section',
-      );
+      const result = parseQueryString('https://example.com?name=Alice#section');
 
       expect(result).toEqual({ name: 'Alice' });
     });
 
     it('should handle hash after multiple parameters', () => {
-      const result = parseQueryString(
-        'https://example.com?a=1&b=2#fragment',
-      );
+      const result = parseQueryString('https://example.com?a=1&b=2#fragment');
 
       expect(result).toEqual({ a: '1', b: '2' });
     });

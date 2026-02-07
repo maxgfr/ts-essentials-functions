@@ -169,7 +169,7 @@ describe('recursiveReplaceKey', () => {
       const obj = { a: 'prefix_old_suffix' };
       const result = recursiveReplaceKey(
         obj,
-        { 'prefix_old_suffix': 'replaced' },
+        { prefix_old_suffix: 'replaced' },
         'old',
       );
       expect(result).toEqual({ a: 'replaced' });

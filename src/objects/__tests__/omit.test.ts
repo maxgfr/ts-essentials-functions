@@ -30,10 +30,9 @@ describe('omit', () => {
     });
 
     it('should handle keys not present in object', () => {
-      const result = omit(
-        { a: 1, b: 2 } as Record<string, unknown>,
-        ['c' as keyof Record<string, unknown>],
-      );
+      const result = omit({ a: 1, b: 2 } as Record<string, unknown>, [
+        'c' as keyof Record<string, unknown>,
+      ]);
       expect(result).toEqual({ a: 1, b: 2 });
     });
 

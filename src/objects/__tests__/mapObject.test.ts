@@ -61,7 +61,7 @@ describe('mapObject', () => {
     it('should handle null and undefined values', () => {
       const result = mapObject(
         { a: null, b: undefined } as Record<string, unknown>,
-        (v) => v === null ? 'null' : 'undefined',
+        (v) => (v === null ? 'null' : 'undefined'),
       );
       expect(result).toEqual({ a: 'null', b: 'undefined' });
     });

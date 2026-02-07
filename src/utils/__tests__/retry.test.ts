@@ -12,7 +12,8 @@ describe('retry', () => {
     });
 
     it('should succeed after retrying on transient failures', async () => {
-      const fn = jest.fn()
+      const fn = jest
+        .fn()
         .mockRejectedValueOnce(new Error('fail 1'))
         .mockResolvedValue('success');
 
@@ -23,7 +24,8 @@ describe('retry', () => {
     });
 
     it('should succeed on the last attempt', async () => {
-      const fn = jest.fn()
+      const fn = jest
+        .fn()
         .mockRejectedValueOnce(new Error('fail 1'))
         .mockRejectedValueOnce(new Error('fail 2'))
         .mockResolvedValue('success');
@@ -39,29 +41,30 @@ describe('retry', () => {
     it('should throw the last error when all attempts fail', async () => {
       const fn = jest.fn().mockRejectedValue(new Error('always fails'));
 
-      await expect(
-        retry(fn, { maxAttempts: 3, delay: 1 }),
-      ).rejects.toThrow('always fails');
+      await expect(retry(fn, { maxAttempts: 3, delay: 1 })).rejects.toThrow(
+        'always fails',
+      );
       expect(fn).toHaveBeenCalledTimes(3);
     });
 
     it('should throw the error from the last attempt specifically', async () => {
-      const fn = jest.fn()
+      const fn = jest
+        .fn()
         .mockRejectedValueOnce(new Error('error 1'))
         .mockRejectedValueOnce(new Error('error 2'))
         .mockRejectedValueOnce(new Error('error 3'));
 
-      await expect(
-        retry(fn, { maxAttempts: 3, delay: 1 }),
-      ).rejects.toThrow('error 3');
+      await expect(retry(fn, { maxAttempts: 3, delay: 1 })).rejects.toThrow(
+        'error 3',
+      );
     });
 
     it('should call the function exactly maxAttempts times on repeated failure', async () => {
       const fn = jest.fn().mockRejectedValue(new Error('fail'));
 
-      await expect(
-        retry(fn, { maxAttempts: 5, delay: 1 }),
-      ).rejects.toThrow('fail');
+      await expect(retry(fn, { maxAttempts: 5, delay: 1 })).rejects.toThrow(
+        'fail',
+      );
       expect(fn).toHaveBeenCalledTimes(5);
     });
   });
@@ -75,7 +78,8 @@ describe('retry', () => {
     });
 
     it('should use a backoff multiplier of 1 by default (constant delay)', async () => {
-      const fn = jest.fn()
+      const fn = jest
+        .fn()
         .mockRejectedValueOnce(new Error('fail'))
         .mockRejectedValueOnce(new Error('fail'))
         .mockResolvedValue('success');
@@ -94,7 +98,8 @@ describe('retry', () => {
 
   describe('backoff', () => {
     it('should apply exponential backoff with the specified multiplier', async () => {
-      const fn = jest.fn()
+      const fn = jest
+        .fn()
         .mockRejectedValueOnce(new Error('fail'))
         .mockRejectedValueOnce(new Error('fail'))
         .mockResolvedValue('success');
@@ -111,7 +116,8 @@ describe('retry', () => {
     });
 
     it('should increase delay with each retry when backoff > 1', async () => {
-      const fn = jest.fn()
+      const fn = jest
+        .fn()
         .mockRejectedValueOnce(new Error('fail'))
         .mockRejectedValueOnce(new Error('fail'))
         .mockRejectedValueOnce(new Error('fail'))
@@ -146,7 +152,8 @@ describe('retry', () => {
     });
 
     it('should resolve with the value from the successful attempt', async () => {
-      const fn = jest.fn()
+      const fn = jest
+        .fn()
         .mockRejectedValueOnce(new Error('fail'))
         .mockResolvedValue('recovered');
 
@@ -159,7 +166,9 @@ describe('retry', () => {
       const fn = jest.fn().mockRejectedValue(new Error('fail'));
 
       const start = Date.now();
-      await expect(retry(fn, { maxAttempts: 2, delay: 10 })).rejects.toThrow('fail');
+      await expect(retry(fn, { maxAttempts: 2, delay: 10 })).rejects.toThrow(
+        'fail',
+      );
       const elapsed = Date.now() - start;
 
       // Only 1 delay between attempt 1 and 2, no delay after attempt 2

@@ -35,7 +35,9 @@
     "build:swc": "swc ./src -d build",
     "build:swc:watch": "swc ./src -d build -w",
     "lint": "eslint ./src",
-    "prettier": "prettier --write './src/**/*.{ts,js,json}'",
+    "format": "prettier --write './src/**/*.{ts,js,json}'",
+    "format:check": "prettier --check './src/**/*.{ts,js,json}'",
+    "typecheck": "tsc --noEmit",
     "release": "semantic-release"
   },
   "pnpm": {

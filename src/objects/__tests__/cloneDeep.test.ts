@@ -68,7 +68,10 @@ describe('cloneDeep', () => {
     });
 
     it('should deep clone nested arrays', () => {
-      const original = [[1, 2], [3, [4, 5]]];
+      const original = [
+        [1, 2],
+        [3, [4, 5]],
+      ];
       const clone = cloneDeep(original);
       expect(clone).toEqual(original);
       expect(clone[0]).not.toBe(original[0]);
@@ -124,7 +127,10 @@ describe('cloneDeep', () => {
 
   describe('Map', () => {
     it('should clone Map objects', () => {
-      const original = new Map([['a', 1], ['b', 2]]);
+      const original = new Map([
+        ['a', 1],
+        ['b', 2],
+      ]);
       const clone = cloneDeep(original);
       expect(clone).not.toBe(original);
       expect(clone.get('a')).toBe(1);

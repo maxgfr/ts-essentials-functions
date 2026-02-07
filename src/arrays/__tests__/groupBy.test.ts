@@ -91,15 +91,15 @@ describe('groupBy', () => {
     });
 
     it('should throw TypeError for null input', () => {
-      expect(() =>
-        groupBy(null as unknown as string[], (x) => x),
-      ).toThrow(TypeError);
+      expect(() => groupBy(null as unknown as string[], (x) => x)).toThrow(
+        TypeError,
+      );
     });
 
     it('should throw TypeError for undefined input', () => {
-      expect(() =>
-        groupBy(undefined as unknown as string[], (x) => x),
-      ).toThrow(TypeError);
+      expect(() => groupBy(undefined as unknown as string[], (x) => x)).toThrow(
+        TypeError,
+      );
     });
   });
 });

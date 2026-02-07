@@ -79,9 +79,7 @@ describe('isHTML', () => {
     });
 
     it('should return true for multi-attribute tags', () => {
-      expect(
-        isHTML('<div class="foo" id="bar">content</div>'),
-      ).toBe(true);
+      expect(isHTML('<div class="foo" id="bar">content</div>')).toBe(true);
     });
 
     it('should handle tags with data attributes', () => {

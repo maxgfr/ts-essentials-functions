@@ -50,7 +50,9 @@ describe('hasObjectNullOrUndefined', () => {
     });
 
     it('should return false when object has no null/undefined/NaN', () => {
-      expect(hasObjectNullOrUndefined({ a: 1, b: 'hello', c: true })).toBe(false);
+      expect(hasObjectNullOrUndefined({ a: 1, b: 'hello', c: true })).toBe(
+        false,
+      );
     });
   });
 
@@ -78,9 +80,7 @@ describe('hasObjectNullOrUndefined', () => {
     });
 
     it('should handle mixed nesting with arrays', () => {
-      expect(
-        hasObjectNullOrUndefined({ a: [1, 2, null] }),
-      ).toBe(true);
+      expect(hasObjectNullOrUndefined({ a: [1, 2, null] })).toBe(true);
     });
 
     it('should return false for arrays with all valid values', () => {

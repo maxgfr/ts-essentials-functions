@@ -3,7 +3,9 @@ import { arrayInterpolate } from '../interpolate';
 describe('arrayInterpolate', () => {
   describe('happy path', () => {
     it('should interleave two number arrays', () => {
-      expect(arrayInterpolate([1, 3, 5], [2, 4, 6])).toEqual([1, 2, 3, 4, 5, 6]);
+      expect(arrayInterpolate([1, 3, 5], [2, 4, 6])).toEqual([
+        1, 2, 3, 4, 5, 6,
+      ]);
     });
 
     it('should interleave two string arrays', () => {

@@ -113,15 +113,15 @@ describe('countWeekendDays', () => {
     });
 
     it('should throw Error for invalid first Date', () => {
-      expect(() =>
-        countWeekendDays(new Date('invalid'), new Date()),
-      ).toThrow('Invalid date provided');
+      expect(() => countWeekendDays(new Date('invalid'), new Date())).toThrow(
+        'Invalid date provided',
+      );
     });
 
     it('should throw Error for invalid second Date', () => {
-      expect(() =>
-        countWeekendDays(new Date(), new Date('invalid')),
-      ).toThrow('Invalid date provided');
+      expect(() => countWeekendDays(new Date(), new Date('invalid'))).toThrow(
+        'Invalid date provided',
+      );
     });
 
     it('should throw TypeError for null arguments', () => {

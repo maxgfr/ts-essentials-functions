@@ -23,7 +23,13 @@ describe('cleanObject', () => {
     });
 
     it('should remove all default values at once', () => {
-      const result = cleanObject({ a: 1, b: null, c: undefined, d: NaN, e: '' });
+      const result = cleanObject({
+        a: 1,
+        b: null,
+        c: undefined,
+        d: NaN,
+        e: '',
+      });
       expect(result).toEqual({ a: 1 });
     });
 
@@ -73,13 +79,19 @@ describe('cleanObject', () => {
 
   describe('arrays', () => {
     it('should filter default values from arrays', () => {
-      const input = [1, null, 2, undefined, 3, '', NaN] as unknown as Record<string, unknown>;
+      const input = [1, null, 2, undefined, 3, '', NaN] as unknown as Record<
+        string,
+        unknown
+      >;
       const result = cleanObject(input);
       expect(result).toEqual([1, 2, 3]);
     });
 
     it('should clean objects nested inside arrays', () => {
-      const input = [{ a: 1, b: null }, { c: undefined, d: 2 }] as unknown as Record<string, unknown>;
+      const input = [
+        { a: 1, b: null },
+        { c: undefined, d: 2 },
+      ] as unknown as Record<string, unknown>;
       const result = cleanObject(input);
       expect(result).toEqual([{ a: 1 }, { d: 2 }]);
     });
@@ -99,7 +111,10 @@ describe('cleanObject', () => {
     });
 
     it('should remove custom values', () => {
-      const result = cleanObject({ a: 1, b: 0, c: false } as Record<string, unknown>, [0, false]);
+      const result = cleanObject(
+        { a: 1, b: 0, c: false } as Record<string, unknown>,
+        [0, false],
+      );
       expect(result).toEqual({ a: 1 });
     });
 

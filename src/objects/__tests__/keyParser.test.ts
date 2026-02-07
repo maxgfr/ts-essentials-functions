@@ -83,7 +83,11 @@ describe('objectKeyParser', () => {
 
     it('should apply prefix transformation', () => {
       const obj = { url: '/path' };
-      const result = objectKeyParser('url', obj, (v) => `https://example.com${v}`);
+      const result = objectKeyParser(
+        'url',
+        obj,
+        (v) => `https://example.com${v}`,
+      );
       expect(result).toEqual({ url: 'https://example.com/path' });
     });
 

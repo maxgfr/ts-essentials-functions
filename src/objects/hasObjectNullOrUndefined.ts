@@ -26,10 +26,7 @@ export const hasObjectNullOrUndefined = (
     const keys = Object.keys(obj as Record<string, unknown>);
     for (const key of keys) {
       if (
-        hasObjectNullOrUndefined(
-          (obj as Record<string, unknown>)[key],
-          visited,
-        )
+        hasObjectNullOrUndefined((obj as Record<string, unknown>)[key], visited)
       ) {
         return true;
       }

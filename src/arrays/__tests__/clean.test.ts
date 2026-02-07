@@ -7,15 +7,19 @@ describe('cleanArray', () => {
     });
 
     it('should remove all falsy values', () => {
-      expect(cleanArray([0, 1, '', 'hello', null, undefined, false, true])).toEqual([
-        1,
-        'hello',
-        true,
-      ]);
+      expect(
+        cleanArray([0, 1, '', 'hello', null, undefined, false, true]),
+      ).toEqual([1, 'hello', true]);
     });
 
     it('should keep truthy values intact', () => {
-      expect(cleanArray([1, 'a', true, {}, []])).toEqual([1, 'a', true, {}, []]);
+      expect(cleanArray([1, 'a', true, {}, []])).toEqual([
+        1,
+        'a',
+        true,
+        {},
+        [],
+      ]);
     });
 
     it('should remove NaN', () => {

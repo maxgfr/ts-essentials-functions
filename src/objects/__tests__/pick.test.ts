@@ -30,10 +30,10 @@ describe('pick', () => {
     });
 
     it('should ignore keys not present in object', () => {
-      const result = pick(
-        { a: 1, b: 2 } as Record<string, unknown>,
-        ['a', 'c' as keyof Record<string, unknown>],
-      );
+      const result = pick({ a: 1, b: 2 } as Record<string, unknown>, [
+        'a',
+        'c' as keyof Record<string, unknown>,
+      ]);
       expect(result).toEqual({ a: 1 });
     });
 

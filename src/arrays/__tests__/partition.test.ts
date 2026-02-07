@@ -113,9 +113,9 @@ describe('partition', () => {
     });
 
     it('should throw TypeError for null input', () => {
-      expect(() =>
-        partition(null as unknown as unknown[], () => true),
-      ).toThrow(TypeError);
+      expect(() => partition(null as unknown as unknown[], () => true)).toThrow(
+        TypeError,
+      );
     });
 
     it('should throw TypeError for undefined input', () => {

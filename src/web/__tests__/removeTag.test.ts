@@ -54,9 +54,9 @@ describe('stripSimpleHtmlTags', () => {
     });
 
     it('should remove tags but preserve text between them', () => {
-      expect(
-        stripSimpleHtmlTags('before <span>middle</span> after'),
-      ).toBe('before middle after');
+      expect(stripSimpleHtmlTags('before <span>middle</span> after')).toBe(
+        'before middle after',
+      );
     });
 
     it('should handle tags with newlines inside the tag itself', () => {
