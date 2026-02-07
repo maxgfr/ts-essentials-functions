@@ -1,21 +1,32 @@
 import { hasObjectNullOrUndefined } from '../objects';
 
-export const detectNullOrUndefinedOrNaNInArray = (array: any[]): any => {
+/**
+ * Checks if an array (potentially nested with objects) contains any null, undefined, or NaN values.
+ *
+ * @param array - The array to check
+ * @returns True if any null, undefined, or NaN value is found
+ *
+ * @example
+ * ```typescript
+ * detectNullOrUndefinedOrNaNInArray([1, 2, null]); // true
+ * detectNullOrUndefinedOrNaNInArray([1, 2, 3]); // false
+ * detectNullOrUndefinedOrNaNInArray([{ a: undefined }]); // true
+ * ```
+ */
+export const detectNullOrUndefinedOrNaNInArray = (
+  array: unknown[],
+): boolean => {
   return array.some((item) => {
     if (item && typeof item === 'object') {
-      const keys = Object.keys(item);
-      for (let i = 0; i < keys.length; i++) {
-        const key = keys[i];
-        if (Array.isArray(item[key])) {
-          return detectNullOrUndefinedOrNaNInArray(item[key]);
-        } else if (typeof item[key] === 'object') {
-          return hasObjectNullOrUndefined(item[key]);
+      const keys = Object.keys(item as Record<string, unknown>);
+      for (const key of keys) {
+        const value = (item as Record<string, unknown>)[key];
+        if (Array.isArray(value)) {
+          return detectNullOrUndefinedOrNaNInArray(value);
+        } else if (typeof value === 'object') {
+          return hasObjectNullOrUndefined(value);
         }
-        if (
-          item[key] === null ||
-          item[key] === undefined ||
-          Number.isNaN(item[key])
-        ) {
+        if (value === null || value === undefined || Number.isNaN(value)) {
           return true;
         }
       }
