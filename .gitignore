@@ -28,4 +28,7 @@ build/
 .vscode/
 
 # .swc
-.swc/
+.swc/$
+
+# coverage 
+coverage/
