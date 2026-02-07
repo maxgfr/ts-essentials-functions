@@ -1,6 +1,5 @@
 # ts-essentials-functions
 
-[![npm version](https://badge.fury.io/js/ts-essentials-functions.svg)](https://www.npmjs.com/package/ts-essentials-functions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A collection of **52 essential TypeScript utility functions** with zero dependencies. Fully typed, immutable, and tested.
@@ -10,7 +9,7 @@ A collection of **52 essential TypeScript utility functions** with zero dependen
 - **Zero dependencies** - No external packages
 - **TypeScript-first** - Full generic type support, no `any` types
 - **Immutable** - All functions return new values, never mutate inputs
-- **Tested** - 80%+ test coverage with comprehensive edge case handling
+- **Tested** - Test coverage with comprehensive edge case handling
 - **Tree-shakeable** - Import only what you need
 
 ## Installation
