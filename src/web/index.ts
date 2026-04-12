@@ -1,5 +1,6 @@
 export * from './arrayToFormData';
 export * from './buildQueryString';
+export * from './escapeHtml';
 export * from './isHtml';
 export * from './isValidMail';
 export * from './isValidUrl';

@@ -1,4 +1,4 @@
-import { getRepeatedOccurrenceArray } from '../getRepeatedOccurence';
+import { getRepeatedOccurrenceArray } from '../getRepeatedOccurrence';
 
 describe('getRepeatedOccurrenceArray', () => {
   describe('happy path', () => {
